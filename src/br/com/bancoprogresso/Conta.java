@@ -6,10 +6,12 @@ public class Conta {
 		private String conta;
 		private String titular;
 		private double saldo;
+		String nome;
+		String numero;
 		
 		public Conta(String titular, String agencia, String conta) {
 			this.titular = titular;
-			this.agencia = agencia;
+			this.agencia = "";
 			this.conta = conta;
 			this.saldo = 500;
 		}
@@ -29,6 +31,7 @@ public class Conta {
 		public double Debito(double valor){
 			return this.saldo -= valor;
 		}
-	}
+		
+		}
 
 
