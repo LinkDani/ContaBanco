@@ -4,20 +4,18 @@ public class Conta {
 
 		private String agencia;
 		private String conta;
-		private String titular;
+		private Correntista titular;
 		private double saldo;
-		String nome;
-		String numero;
 		
 		public Conta(String titular, String agencia, String conta) {
-			this.titular = titular;
-			this.agencia = "";
+			this.titular = new Correntista(titular, " ");
+			this.agencia = agencia;
 			this.conta = conta;
-			this.saldo = 500;
+			this.saldo = 0;
 		}
 		
 		public String GetTitular() {
-			return this.titular;
+			return this.titular.GetNome();
 		}
 		
 		public double GetSaldo() {
@@ -31,7 +29,15 @@ public class Conta {
 		public double Debito(double valor){
 			return this.saldo -= valor;
 		}
-		
+
+		public void ImprimeDados(){
+			System.out.println("Dados da conta");
+			System.out.println("Agência: " + this.agencia + " | conta: " + this.conta);
+			System.out.println("Titular: " + this.titular.GetNome());
+				if(this.saldo > 0){
+					System.out.println("Saldo: " + this.saldo);
+				}
+			}
 		}
 
 
